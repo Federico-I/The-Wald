@@ -14,6 +14,14 @@ const Button = styled.button`
   border-radius: 7px;
   background-color: red;
   color: white;
+  cursor: pointer;
+  margin: 20px;
+`;
+
+const Input = styled.input`
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
 `;
 
 function App() {
@@ -21,6 +29,7 @@ function App() {
     <div>
       <H1>The Wald</H1>
       <Button onClick={() => alert("Are you sure?")}>Check In</Button>
+      <Button onClick={() => alert("Are you sure?")}>Check Out</Button>
     </div>
   )
 }
