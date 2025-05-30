@@ -31,12 +31,12 @@ const StyledApp = styled.div`
 
 function App() {
   return (
-    <div>
+    <StyledApp>
       <H1>The Wald</H1>
       <Button onClick={() => alert("Are you sure?")}>Check In</Button>
       <Button onClick={() => alert("Are you sure?")}>Check Out</Button>
       <Input type="number" placeholder='Number of guests'/>
-    </div>
+    </StyledApp>
   )
 }
 
