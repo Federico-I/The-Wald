@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { css } from "styled-components";
 
 const sizes = {
@@ -58,6 +59,10 @@ const Button = styled.button`
   color: var(--color-brand-50);
   box-shadow: var(--shadow-sm);
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-700);
+  }
 `;
 
 export default Button;
