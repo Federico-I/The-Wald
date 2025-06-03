@@ -12,12 +12,12 @@ const StyledApp = styled.div`
 function App() {
   return (
     <StyledApp>
-      <Heading typeof='h1'>The Wald</Heading>
-      <Heading typeof='h2'>Check In and Out</Heading>
+      <Heading as='h1'>The Wald</Heading>
+      <Heading as='h2'>Check In and Out</Heading>
       <Button onClick={() => alert("Are you sure?")}>Check In</Button>
       <Button onClick={() => alert("Are you sure?")}>Check Out</Button>
       
-      <Heading typeof='h3'>The Wald</Heading>
+      <Heading as='h3'>The Wald</Heading>
       <Input type="number" placeholder='Number of guests'/>
       <Input type="number" placeholder='Number of guests'/>
     </StyledApp>
