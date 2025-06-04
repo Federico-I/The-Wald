@@ -4,6 +4,7 @@ import Input from './ui/Input';
 import Button from './ui/Button';
 import Heading from './ui/Heading';
 import createGlobalStyle from 'styled-components';
+import Row from './ui/Row';
 
 const StyledApp = styled.div`
   background-color: green;
@@ -15,7 +16,7 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Row>
+        <Row typeof='horizontal'>
           <Heading as='h1'>The Wald</Heading>
         
           <div>
@@ -24,10 +25,12 @@ function App() {
             <Button onClick={() => alert("Are you sure?")}>Check Out</Button>
           </div>
         </Row>
-        
-        <Heading as='h3'>Form</Heading>
-        <Input type="number" placeholder='Number of guests'/>
-        <Input type="number" placeholder='Number of guests'/>
+
+        <Row typeof='vertical'>
+          <Heading as='h3'>Form</Heading>
+          <Input type="number" placeholder='Number of guests'/>
+          <Input type="number" placeholder='Number of guests'/>
+        </Row>
       </StyledApp>
     </>
     
