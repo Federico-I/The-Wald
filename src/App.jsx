@@ -16,25 +16,26 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Row typeof='horizontal'>
-          <Heading as='h1'>The Wald</Heading>
-        
-          <div>
-            <Heading as='h2'>Check In and Out</Heading>
-            <Button onClick={() => alert("Are you sure?")}>Check In</Button>
-            <Button onClick={() => alert("Are you sure?")}>Check Out</Button>
-          </div>
-        </Row>
-
         <Row typeof='vertical'>
-          <Heading as='h3'>Form</Heading>
-          <Input type="number" placeholder='Number of guests'/>
-          <Input type="number" placeholder='Number of guests'/>
+          <Row typeof='horizontal'>
+            <Heading as='h1'>The Wald</Heading>
+          
+            <div>
+              <Heading as='h2'>Check In and Out</Heading>
+              <Button onClick={() => alert("Are you sure?")}>Check In</Button>
+              <Button onClick={() => alert("Are you sure?")}>Check Out</Button>
+            </div>
+          </Row>
+
+          <Row typeof='vertical'>
+            <Heading as='h3'>Form</Heading>
+            <Input type="number" placeholder='Number of guests'/>
+            <Input type="number" placeholder='Number of guests'/>
+          </Row>
         </Row>
       </StyledApp>
     </>
-    
-  )
+  );
 }
 
 export default App;
