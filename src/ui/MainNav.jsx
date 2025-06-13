@@ -50,9 +50,14 @@ const Link = styled.a`
 function MainNav() {
   return (
     <nav>
-      <ul>
-        <li></li>
-      </ul>
+      <NavList>
+        <li>
+          <Link href="/dashboard">Home</Link>
+        </li>
+        <li>
+          <Link href="/booking">Bookings</Link>
+        </li>
+      </NavList>
     </nav>
   );
 }
