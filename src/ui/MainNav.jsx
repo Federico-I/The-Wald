@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { IconName } from "react-icons/hi2";
 
 const NavList = styled.ul`
   display: flex;
