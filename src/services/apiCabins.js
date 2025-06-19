@@ -1,3 +1,8 @@
 export async function getCabins() {
-  let { data: cabins, error } = await supabase.from("cabins").select("*")
+  const { data, error } = await supabase.from("cabins").select("*");
+
+  if(error)
+  {
+    console.error("Cabins could not be loaded");
+  }
 };
