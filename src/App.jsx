@@ -22,27 +22,25 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <>
     <QueryClientProvider client={queryClient}>
-      <GlobalStyles/>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<AppLayout/>}>
-              <Route index element={<Navigate replace="dashoboard"/>} />
-              <Route path="dashboard" element={<Dashboard/>} />
-              <Route path="booking" element={<Bookings/>} />
-              <Route path="cabin" element={<Cabins/>} />
-              <Route path="newUsers" element={<NewUsers/>} />
-              <Route path="settings" element={<Settings/>} />
-              <Route path="account" element={<Account/>} />
-              <Route path="login" element={<Login/>} />
-              <Route path="*" element={<PageNotFound/>} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </QueryClientProvider>
-    </>
-  )
+      <GlobalStyles/> 
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout/>}>
+            <Route index element={<Navigate replace="dashoboard"/>} />
+            <Route path="dashboard" element={<Dashboard/>} />
+            <Route path="booking" element={<Bookings/>} />
+            <Route path="cabin" element={<Cabins/>} />
+            <Route path="newUsers" element={<NewUsers/>} />
+            <Route path="settings" element={<Settings/>} />
+            <Route path="account" element={<Account/>} />
+            <Route path="login" element={<Login/>} />
+            <Route path="*" element={<PageNotFound/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
+)
 };
 
 export default App;
