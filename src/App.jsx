@@ -10,6 +10,15 @@ import Login from './pages/Login';
 import PageNotFound from './pages/PageNotFound';
 import GlobalStyles from '../styles/GlobalStyles';
 import AppLayout from './ui/AppLayout';
+import { QueryClient } from '@tanstack/react-query';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 70 * 1000,
+    }
+  },
+});
 
 function App() {
   return (
