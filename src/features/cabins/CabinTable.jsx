@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { getCabins } from "../../services/apiCabins";
 import Spinner from "../../ui/Spinner";
+import CabinRow from "./CabinRow";
 
 const Table = styled.div`
   border: 1px solid var(--color-grey-200);
@@ -36,7 +37,19 @@ function CabinTable() {
 
   if(isPending) return <Spinner />
 
-  return <div>Table</div>;
+  return (
+    <Table>
+      <TableHeader>
+        <div></div>
+        <div>Cabin</div>
+        <div>Capacity</div>
+        <div>Price</div>
+        <div>Discount</div>
+        <div></div>
+      </TableHeader>
+      { cabins.map((cabin)=> <CabinRow cabin={cabin} key={cabins.id}/>) } 
+    </Table>
+  );
 }
 
 export default CabinTable;
