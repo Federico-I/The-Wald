@@ -46,6 +46,7 @@ function CabinRow({ cabin }) {
   return (
     <TableRow>
       <Img src={image} />
+      <Cabin>{name}</Cabin>
     </TableRow>
   )
 };
