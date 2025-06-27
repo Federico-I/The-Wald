@@ -1,5 +1,6 @@
 import react from "react";
 import styled from "styled-components";
+import { formatCurrency } from "../../utils/helpers";
 
 const TableRow = styled.div`
   display: grid;
@@ -49,6 +50,7 @@ function CabinRow({ cabin }) {
       <Cabin>{name}</Cabin>
       <div>Capacity {maxCapacity} guests</div>
       <Price>{formatCurrency(regularPrice)}</Price>
+      <Discount>{formatCurrency(discount)}</Discount>
     </TableRow>
   )
 };
