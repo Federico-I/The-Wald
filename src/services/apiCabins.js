@@ -11,4 +11,9 @@ export async function getCabins() {
   return data;
 };
 
-export async function deleteCabin(id) {};
+export async function deleteCabin(id) {
+  const { data, error } = await supabase
+    .from("cabins")
+    .delete()
+    .eq("some_column", "someValue");
+};
