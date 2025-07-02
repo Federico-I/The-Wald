@@ -46,7 +46,7 @@ const Discount = styled.div`
 function CabinRow({ cabin }) {
   const { name, maxCapacity, regularPrice, discount, image } = cabin;
 
-  const {isPending, mutate} = useMutation({
+  const {isPending: isDeleting, mutate} = useMutation({
     mutationFn: (id) => deleteCabin(),
   });
   
@@ -57,7 +57,7 @@ function CabinRow({ cabin }) {
       <div>Capacity {maxCapacity} guests</div>
       <Price>{formatCurrency(regularPrice)}</Price>
       <Discount>{formatCurrency(discount)}</Discount>
-      <button onClick={()=> mutate(cabinId)}>Delete</button>
+      <button onClick={()=> mutate(cabinId)} disabled={isDeleting}>Delete</button>
     </TableRow>
   )
 };
