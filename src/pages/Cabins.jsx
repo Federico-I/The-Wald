@@ -3,6 +3,7 @@ import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 
 function Cabins() {
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <>
@@ -13,6 +14,8 @@ function Cabins() {
 
       <Row>
         <CabinTable />
+
+        <Button onClick={() => setShowForm((show) => !show)}>Add New Cabin</Button>
       </Row>
     </>
   );
