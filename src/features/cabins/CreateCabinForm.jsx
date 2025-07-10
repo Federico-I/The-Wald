@@ -48,7 +48,7 @@ function CreateCabinForm() {
 
   const { register, handleSubmit } = useForm();
 
-  function onSubmit() {
+  function onSubmit(data) {
 
   }
  
@@ -89,7 +89,7 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button>Edit cabin</Button>
+        <Button>Add cabin</Button>
       </FormRow>
     </Form>
   );

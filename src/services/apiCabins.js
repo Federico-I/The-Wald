@@ -1,4 +1,6 @@
 import react from "react";
+
+
 export async function getCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
 
@@ -9,6 +11,10 @@ export async function getCabins() {
   }
 
   return data;
+};
+
+export async function CreateCabinForm( newCabin ) {
+  
 };
 
 export async function deleteCabin(id) {
