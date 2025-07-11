@@ -14,7 +14,7 @@ export async function getCabins() {
 };
 
 export async function CreateCabinForm( newCabin ) {
-  const { data, error } = await supabase.from("cabins").insert([{ some_column: "someValue", other_column: "otherValue"}])
+  const { data, error } = await supabase.from("cabins").insert([newCabin])
 
   if(error)
   {
