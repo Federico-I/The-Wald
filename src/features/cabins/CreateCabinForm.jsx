@@ -48,7 +48,9 @@ const Error = styled.span`
 function CreateCabinForm() {
   const { mutate, isPending } = useMutation({
     mutationFn: CreateCabinForm,
-
+    onSuccess: () => {
+      toast.success("New cabin successfully created");
+    },
   });
 
   const { register, handleSubmit } = useForm();
