@@ -46,6 +46,8 @@ const Error = styled.span`
 `;
 
 function CreateCabinForm() {
+    const { register, handleSubmit, reset } = useForm();
+
   const queryClient = useQueryClient();
 
   const { mutate, isPending } = useMutation({
@@ -56,8 +58,6 @@ function CreateCabinForm() {
     },
     onError: (err) => toast.error(err.message),
   });
-
-  const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
     mutate(data);
