@@ -46,10 +46,13 @@ const Error = styled.span`
 `;
 
 function CreateCabinForm() {
+  const queryClient = useQueryClient();
+
   const { mutate, isPending } = useMutation({
     mutationFn: CreateCabinForm,
     onSuccess: () => {
       toast.success("New cabin successfully created");
+      queryClient.invalidateQueries({ queryKey: ["cabin"] });
     },
   });
 
