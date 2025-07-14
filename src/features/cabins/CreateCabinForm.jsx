@@ -50,7 +50,7 @@ function CreateCabinForm() {
 
   const queryClient = useQueryClient();
 
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending: isCreating } = useMutation({
     mutationFn: CreateCabinForm,
     onSuccess: () => {
       toast.success("New cabin successfully created");
@@ -101,7 +101,7 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button>Add cabin</Button>
+        <Button disabled={isCreating}>Add cabin</Button>
       </FormRow>
     </Form>
   );
