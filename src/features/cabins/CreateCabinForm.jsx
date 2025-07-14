@@ -60,8 +60,8 @@ function CreateCabinForm() {
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
-
-  }
+    mutate(data);
+  };
  
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
