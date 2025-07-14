@@ -54,6 +54,7 @@ function CreateCabinForm() {
       toast.success("New cabin successfully created");
       queryClient.invalidateQueries({ queryKey: ["cabin"] });
     },
+    onError: (err) => toast.error(err.message),
   });
 
   const { register, handleSubmit } = useForm();
