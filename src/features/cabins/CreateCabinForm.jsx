@@ -63,9 +63,13 @@ function CreateCabinForm() {
   function onSubmit(data) {
     mutate(data);
   };
+
+  function onError(error){
+    console.log(error);
+  };
  
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit, onError)}>
       <FormRow>
         <Label htmlFor="name">Cabin name</Label>
         <Input type="text" id="name" {...register("name", {
@@ -77,6 +81,9 @@ function CreateCabinForm() {
         <Label htmlFor="maxCapacity">Maximum capacity</Label>
         <Input type="number" id="maxCapacity" {...register("MaxCapacity", {
           required: "This field is requierd",
+          min: {
+            value: 1,
+          }
         })}/>
       </FormRow>
 
