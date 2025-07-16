@@ -46,7 +46,7 @@ const Error = styled.span`
 `;
 
 function CreateCabinForm() {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, getValues } = useForm();
 
   const queryClient = useQueryClient();
 
@@ -99,7 +99,7 @@ function CreateCabinForm() {
         <Label htmlFor="discount">Discount</Label>
         <Input type="number" id="discount" defaultValue={0} {...register("discount", {
           required: "This field is requierd",
-          validate: (value) => value > 100 || "Discount should be less than the regular price",
+          validate: (value) => value <= getValues().regularPrice || "Discount should be less than the regular price",
         })}/>
       </FormRow>
 
