@@ -83,7 +83,8 @@ function CreateCabinForm() {
           required: "This field is requierd",
           min: {
             value: 1,
-          }
+            message: "Capacity should be at least 1"
+          },
         })}/>
       </FormRow>
 
@@ -98,6 +99,7 @@ function CreateCabinForm() {
         <Label htmlFor="discount">Discount</Label>
         <Input type="number" id="discount" defaultValue={0} {...register("discount", {
           required: "This field is requierd",
+          validate: (value) => value > 100 || "Discount should be less than the regular price",
         })}/>
       </FormRow>
 
