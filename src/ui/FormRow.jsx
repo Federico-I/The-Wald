@@ -1,7 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 
 
-const FormRow = styled.div`
+const StyledFormRow = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 24rem 1fr 1.2fr;
@@ -28,15 +29,15 @@ const FormRow = styled.div`
   }
 `;
 
-function FormRow() {
+function styledFormRow() {
   return (
-    <FormRow>
+    <StyledFormRow>
       <Label htmlFor="name">Cabin name</Label>
       <Input type="text" id="name" {...register("name", {
         required: "This field is requierd",
       }) }/>
       {errors?.name?.message && <Error>{errors.name.message}</Error>}
-    </FormRow>
+    </StyledFormRow>
   )
 };
 
