@@ -46,7 +46,8 @@ const Error = styled.span`
 `;
 
 function CreateCabinForm() {
-    const { register, handleSubmit, reset, getValues } = useForm();
+  const { register, handleSubmit, reset, getValues, formState } = useForm();
+  const { errors } = formState;
 
   const queryClient = useQueryClient();
 
