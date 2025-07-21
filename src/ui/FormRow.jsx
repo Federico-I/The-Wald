@@ -29,7 +29,7 @@ const StyledFormRow = styled.div`
   }
 `;
 
-function FormRow({ label, error}) {
+function FormRow({ label, error, children}) {
   return (
     <StyledFormRow>
       <Label htmlFor="name">Cabin name</Label>
