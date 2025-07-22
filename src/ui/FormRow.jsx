@@ -33,10 +33,8 @@ function FormRow({ label, error, children}) {
   return (
     <StyledFormRow>
       <Label htmlFor="name">{label}</Label>
-      <Input type="text" id="name" {...register("name", {
-        required: "This field is requierd",
-      }) }/>
-      {errors?.name?.message && <Error>{errors.name.message}</Error>}
+      {children}
+      {error && <Error>{error}</Error>}
     </StyledFormRow>
   )
 };
