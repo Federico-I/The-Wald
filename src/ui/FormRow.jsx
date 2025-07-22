@@ -32,7 +32,7 @@ const StyledFormRow = styled.div`
 function FormRow({ label, error, children}) {
   return (
     <StyledFormRow>
-      <Label htmlFor="name">Cabin name</Label>
+      <Label htmlFor="name">{label}</Label>
       <Input type="text" id="name" {...register("name", {
         required: "This field is requierd",
       }) }/>
