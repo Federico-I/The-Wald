@@ -8,6 +8,7 @@ import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
+import FormRow from "../../ui/FormRow";
 
 
 function CreateCabinForm() {
@@ -36,6 +37,12 @@ function CreateCabinForm() {
  
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
+      <FormRow label="Cabin name" error={error?.name?.message}>
+        <Input type="text" id="name" {...register("name", {
+          required: "This field is required",
+        })}/>
+      </FormRow>
+
       <FormRow>
         <Label htmlFor="maxCapacity">Maximum capacity</Label>
         <Input type="number" id="maxCapacity" {...register("MaxCapacity", {
