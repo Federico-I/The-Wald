@@ -53,8 +53,7 @@ function CreateCabinForm() {
         })}/>
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="regularPrice">Regular price</Label>
+      <FormRow label="Regular Price" error={error?.regularPrice?.message}>
         <Input type="number" id="regularPrice" {...register("regularPrice", {
           required: "This field is requierd",
         })}/>
