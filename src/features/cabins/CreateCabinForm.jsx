@@ -43,8 +43,7 @@ function CreateCabinForm() {
         })}/>
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="maxCapacity">Maximum capacity</Label>
+      <FormRow label="Max Capacity" error={error?.maxCapacity?.message}>
         <Input type="number" id="maxCapacity" {...register("MaxCapacity", {
           required: "This field is requierd",
           min: {
