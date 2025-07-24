@@ -66,8 +66,7 @@ function CreateCabinForm() {
         })}/>
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="description">Description for website</Label>
+      <FormRow label="Description for Website" error={error?.description?.message}>
         <Textarea type="number" id="description" defaultValue="" {...register("description", {
           required: "This field is requierd",
         })}/>
