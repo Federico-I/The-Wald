@@ -37,13 +37,13 @@ function CreateCabinForm() {
  
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
-      <FormRow label="Cabin name" error={error?.name?.message}>
+      <FormRow label="Cabin name" disabled={isCreating} error={error?.name?.message}>
         <Input type="text" id="name" {...register("name", {
           required: "This field is required",
         })}/>
       </FormRow>
 
-      <FormRow label="Max Capacity" error={error?.maxCapacity?.message}>
+      <FormRow label="Max Capacity" disabled={isCreating} error={error?.maxCapacity?.message}>
         <Input type="number" id="maxCapacity" {...register("MaxCapacity", {
           required: "This field is requierd",
           min: {
@@ -53,20 +53,20 @@ function CreateCabinForm() {
         })}/>
       </FormRow>
 
-      <FormRow label="Regular Price" error={error?.regularPrice?.message}>
+      <FormRow label="Regular Price" disabled={isCreating} error={error?.regularPrice?.message}>
         <Input type="number" id="regularPrice" {...register("regularPrice", {
           required: "This field is requierd",
         })}/>
       </FormRow>
 
-      <FormRow label="Discount" error={error?.discount?.message}>
+      <FormRow label="Discount" disabled={isCreating} error={error?.discount?.message}>
         <Input type="number" id="discount" defaultValue={0} {...register("discount", {
           required: "This field is requierd",
           validate: (value) => value <= getValues().regularPrice || "Discount should be less than the regular price",
         })}/>
       </FormRow>
 
-      <FormRow label="Description for Website" error={error?.description?.message}>
+      <FormRow label="Description for Website" disabled={isCreating} error={error?.description?.message}>
         <Textarea type="number" id="description" defaultValue="" {...register("description", {
           required: "This field is requierd",
         })}/>
