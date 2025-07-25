@@ -67,13 +67,13 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow label="Description for Website" disabled={isCreating} error={error?.description?.message}>
-        <Textarea type="number" id="description" defaultValue="" disabled={isCreating} {...register("description", {
-          required: "This field is requierd",
-        })}/>
+        <Textarea type="number" id="description" defaultValue="" disabled={isCreating} />
       </FormRow>
 
       <FormRow label="Cabin Photo">
-        <FileInput id="image" accept="image/*" />
+        <FileInput id="image" accept="image/*" {...register("image", {
+          required: "This field is requierd",
+        })}/>
       </FormRow>
 
       <FormRow>
