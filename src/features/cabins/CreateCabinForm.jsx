@@ -71,7 +71,7 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow label="Cabin Photo">
-        <FileInput id="image" accept="image/*" {...register("image", {
+        <FileInput id="image" accept="image/*" type="file"{...register("image", {
           required: "This field is requierd",
         })}/>
       </FormRow>
