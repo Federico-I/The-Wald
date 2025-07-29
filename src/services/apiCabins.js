@@ -16,6 +16,9 @@ export async function getCabins() {
 export async function CreateCabinForm( newCabin ) {
   const imageName = `${Math.random()}-${newCabin.imageName.name}`.replaceAll("/", "");
 
+  // use supabe URL
+
+
   // URL
 
   // 1) Create Cabin
