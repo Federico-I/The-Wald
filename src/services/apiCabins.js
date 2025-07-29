@@ -14,6 +14,8 @@ export async function getCabins() {
 };
 
 export async function CreateCabinForm( newCabin ) {
+
+  // 1) Create Cabin
   const { data, error } = await supabase.from("cabins").insert([newCabin])
 
   if(error)
@@ -21,6 +23,8 @@ export async function CreateCabinForm( newCabin ) {
     console.error(error);
     throw new Error("Cabins could not be deleted");
   }
+
+  // 2) Upload Image
 
   return data;
 };
