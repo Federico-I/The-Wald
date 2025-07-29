@@ -14,9 +14,12 @@ export async function getCabins() {
 };
 
 export async function CreateCabinForm( newCabin ) {
+  const imageName = `${Math.random()}-${newCabin.imageName.name}`
+
+  // URL
 
   // 1) Create Cabin
-  const { data, error } = await supabase.from("cabins").insert([newCabin])
+  const { data, error } = await supabase.from("cabins").insert([newCabin]);
 
   if(error)
   {
