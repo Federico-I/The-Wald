@@ -16,8 +16,8 @@ export async function getCabins() {
 export async function CreateCabinForm( newCabin ) {
   const imageName = `${Math.random()}-${newCabin.imageName.name}`.replaceAll("/", "");
 
-  // use supabe URL
-
+  // use supabe URL - still check path
+  const imagePath = `${supabaseURL}/storage/v1/object/public/cabin-images/${imageName}`
 
   // URL
 
