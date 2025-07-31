@@ -22,7 +22,7 @@ export async function CreateCabinForm( newCabin ) {
   // URL
 
   // 1) Create Cabin
-  const { data, error } = await supabase.from("cabins").insert([newCabin]);
+  const { data, error } = await supabase.from("cabins").insert([{...newCabin, image: imagePath}]);
 
   if(error)
   {
