@@ -30,7 +30,8 @@ export async function CreateCabinForm( newCabin ) {
     throw new Error("Cabins could not be deleted");
   }
 
-  // 2) Upload Image
+  // 2) Upload Image - provided by api cloud site
+  const {data, error} = await supabase.storage.from("avatars")
 
   return data;
 };
