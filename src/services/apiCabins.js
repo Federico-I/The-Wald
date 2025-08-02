@@ -31,7 +31,10 @@ export async function CreateCabinForm( newCabin ) {
   }
 
   // 2) Upload Image - provided by api cloud site
-  const { error: storageError } = await supabase.storage.from("cabin-images").upload(imageName, newCabin.image);
+  const { error: storageError } = await supabase.storage.from("cabin-images").upload("public/avatar1.png", avatarFile, {
+    cacheControl: "3600",
+    upsert: false,
+  });
 
   return data;
 };
