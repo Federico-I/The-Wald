@@ -37,6 +37,7 @@ export async function CreateCabinForm( newCabin ) {
 
   if(storageError) {
     await supabase.from("cabins").delete().eq("id", data.id);
+    throw new Error("Cabin image could not be uploaded and cabin was not created")
   }
 
   return data;
