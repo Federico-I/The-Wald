@@ -76,7 +76,7 @@ function CabinRow({ cabin }) {
           <button onClick={()=> mutate(cabinId)} disabled={isDeleting}>Delete</button>
         </div>
       </TableRow>
-      {showForm && <CreateCabinForm/>}
+      {showForm && <CreateCabinForm EditCabin={cabin}/>}
     </>
   )
 };
