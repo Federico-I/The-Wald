@@ -13,10 +13,13 @@ import FormRow from "../../ui/FormRow";
 import { useForm } from "react-hook-form";
 import { CreateCabinF } from "../../services/apiCabins";
 
-function CreateCabinForm({ editCabin }) {
+function CreateCabinForm({ editCabin = {} }) {
   const { id: editId, ...editValues } = editCabin;
+  const isEditSession = Boolean(editId);
 
-  const { register, handleSubmit, reset, getValues, formState } = useForm();
+  const { register, handleSubmit, reset, getValues, formState } = useForm({
+    defaultValues: isEditSession ? editValues : {},
+  });
   const { errors } = formState;
 
   const queryClient = useQueryClient();
