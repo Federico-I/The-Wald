@@ -1,3 +1,4 @@
+import react from "react";
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 

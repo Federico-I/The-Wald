@@ -1,6 +1,5 @@
 import react from "react";
 
-
 export async function getCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
 
@@ -13,7 +12,7 @@ export async function getCabins() {
   return data;
 };
 
-export async function CreateCabinForm( newCabin ) {
+export async function CreateCabinF( newCabin ) {
   const imageName = `${Math.random()}-${newCabin.imageName.name}`.replaceAll("/", "");
 
   // use supabe URL - still check path
