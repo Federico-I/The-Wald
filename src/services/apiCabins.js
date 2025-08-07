@@ -21,7 +21,7 @@ export async function CreateCabinF( newCabin ) {
   // URL
 
   // 1) Create Cabin
-  const { data, error } = await supabase.from("cabins").insert([{...newCabin, image: imagePath}]);
+  const { data, error } = await supabase.from("cabins").insert([{...newCabin, image: imagePath}]).select().single();
 
   if(error)
   {
