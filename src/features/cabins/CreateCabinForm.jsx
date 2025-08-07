@@ -62,7 +62,7 @@ function CreateCabinForm({ editCabin = {} }) {
 
       <FormRow label="Regular Price" disabled={isCreating} error={error?.regularPrice?.message}>
         <Input type="number" id="regularPrice" {...register("regularPrice", {
-          required: "This field is requierd",
+          required: isEditSession ? false : "This field is requierd",
         })}/>
       </FormRow>
 
