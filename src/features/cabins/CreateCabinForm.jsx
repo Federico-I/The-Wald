@@ -11,7 +11,7 @@ import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 
 import { useForm } from "react-hook-form";
-import { CreateCabinF } from "../../services/apiCabins";
+import { CreateEditCabinF } from "../../services/apiCabins";
 
 function CreateCabinForm({ editCabin = {} }) {
   const { id: editId, ...editValues } = editCabin;
@@ -25,7 +25,7 @@ function CreateCabinForm({ editCabin = {} }) {
   const queryClient = useQueryClient();
 
   const { mutate, isPending: isCreating } = useMutation({
-    mutationFn: CreateCabinF,
+    mutationFn: CreateEditCabinF,
     onSuccess: () => {
       toast.success("New cabin successfully created");
       queryClient.invalidateQueries({ queryKey: ["cabin"] });

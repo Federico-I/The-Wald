@@ -12,7 +12,7 @@ export async function getCabins() {
   return data;
 };
 
-export async function CreateCabinF( newCabin ) {
+export async function CreateEditCabinF( newCabin ) {
   const imageName = `${Math.random()}-${newCabin.imageName.name}`.replaceAll("/", "");
 
   // use supabe URL - still check path
