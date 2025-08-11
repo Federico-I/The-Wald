@@ -28,7 +28,7 @@ export async function CreateEditCabinF( newCabin, id ) {
   
   // B) EDIT
   if (id)
-    query.update({ other_column: "otherValue" }).eq("some_column", "someValue");
+    query.update({ other_column: "otherValue" }).eq("id", id);
 
   
   const { data, error } = await query.select().single();
