@@ -19,7 +19,7 @@ export async function CreateEditCabinF( newCabin, id ) {
   const imageName = `${Math.random()}-${newCabin.imageName.name}`.replaceAll("/", "");
 
   // use supabe URL - still check path
-  const imagePath = `${supabaseURL}/storage/v1/object/public/cabin-images/${imageName}`
+  const imagePath = hasImagePath ? newCabin.name : `${supabaseURL}/storage/v1/object/public/cabin-images/${imageName}`
 
   // URL
   // 1) Create/edit Cabin
