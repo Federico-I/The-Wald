@@ -1,4 +1,5 @@
 import react from "react";
+import supabase from "./supabase";
 
 export async function getCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
@@ -13,6 +14,8 @@ export async function getCabins() {
 };
 
 export async function CreateEditCabinF( newCabin, id ) {
+  const hasImagePath = newCabin.image.startsWith(supabase);
+
   const imageName = `${Math.random()}-${newCabin.imageName.name}`.replaceAll("/", "");
 
   // use supabe URL - still check path
@@ -29,7 +32,6 @@ export async function CreateEditCabinF( newCabin, id ) {
   // B) EDIT
   if (id)
     query.update({ ...newCabin, image: imagePath }).eq("id", id);
-
   
   const { data, error } = await query.select().single();
   
