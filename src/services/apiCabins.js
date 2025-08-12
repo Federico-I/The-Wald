@@ -14,7 +14,7 @@ export async function getCabins() {
 };
 
 export async function CreateEditCabinF( newCabin, id ) {
-  const hasImagePath = newCabin.image.startsWith(supabase);
+  const hasImagePath = newCabin.image?.startsWith?.(supabase);
 
   const imageName = `${Math.random()}-${newCabin.imageName.name}`.replaceAll("/", "");
 
