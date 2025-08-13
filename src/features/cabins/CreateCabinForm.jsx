@@ -44,6 +44,8 @@ function CreateCabinForm({ editCabin = {} }) {
     onError: (err) => toast.error(err.message),
   });
 
+  const isWorking = isCreating || isEditing;
+
   function onSubmit(data) {
     mutate({ ...data, image: data.image[0] });
   };
