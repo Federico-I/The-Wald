@@ -62,7 +62,7 @@ function CreateCabinForm({ editCabin = {} }) {
         })}/>
       </FormRow>
 
-      <FormRow label="Max Capacity" disabled={isCreating} error={error?.maxCapacity?.message}>
+      <FormRow label="Max Capacity" disabled={isWorking} error={error?.maxCapacity?.message}>
         <Input type="number" id="maxCapacity" {...register("MaxCapacity", {
           required: "This field is requierd",
           min: {
@@ -72,20 +72,20 @@ function CreateCabinForm({ editCabin = {} }) {
         })}/>
       </FormRow>
 
-      <FormRow label="Regular Price" disabled={isCreating} error={error?.regularPrice?.message}>
+      <FormRow label="Regular Price" disabled={isWorking} error={error?.regularPrice?.message}>
         <Input type="number" id="regularPrice" {...register("regularPrice", {
           required: isEditSession ? false : "This field is requierd",
         })}/>
       </FormRow>
 
-      <FormRow label="Discount" disabled={isCreating} error={error?.discount?.message}>
+      <FormRow label="Discount" disabled={isWorking} error={error?.discount?.message}>
         <Input type="number" id="discount" defaultValue={0} {...register("discount", {
           required: "This field is requierd",
           validate: (value) => value <= getValues().regularPrice || "Discount should be less than the regular price",
         })}/>
       </FormRow>
 
-      <FormRow label="Description for Website" disabled={isCreating} error={error?.description?.message}>
+      <FormRow label="Description for Website" disabled={isWorking} error={error?.description?.message}>
         <Textarea type="number" id="description" defaultValue="" disabled={isCreating} />
       </FormRow>
 
@@ -100,7 +100,7 @@ function CreateCabinForm({ editCabin = {} }) {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button disabled={isCreating}>{ isEditSession ? "Edit Cabin" : "Create New Cabin"}</Button>
+        <Button disabled={isWorking}>{ isEditSession ? "Edit Cabin" : "Create New Cabin"}</Button>
       </FormRow>
     </Form>
   );
