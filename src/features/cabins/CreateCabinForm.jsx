@@ -47,7 +47,8 @@ function CreateCabinForm({ editCabin = {} }) {
   const isWorking = isCreating || isEditing;
 
   function onSubmit(data) {
-    mutate({ ...data, image: data.image[0] });
+    if (isEditSession) editCabin();
+    else mutate({ ...data, image: data.image[0] });
   };
 
   function onError(error){
