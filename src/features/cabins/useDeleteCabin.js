@@ -1,4 +1,6 @@
 import react from "react";
+import { toast } from "react-hot-toast";
+import { deleteCabin } from "../../services/apiCabins";
 
 export function useDeleteCabin() {
 
