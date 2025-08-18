@@ -49,12 +49,12 @@ function CreateCabinForm({ editCabin = {} }) {
   function onSubmit(data) {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
-    if (isEditSession) editCabin({newCabinData: { ...data, image }, id: editId });
-    else mutate({ ...data, image: data.image[0] });
+    if (isEditSession) editCabin({ newCabinData: { ...data, image }, id: editId });
+    else createCabin({ ...data, image: data.image });
   };
 
-  function onError(error){
-    console.log(error);
+  function onError(errors){
+    //console.log(error);
   };
  
   return (
