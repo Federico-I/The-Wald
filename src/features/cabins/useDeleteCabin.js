@@ -1,7 +1,7 @@
 import react from "react";
 import { toast } from "react-hot-toast";
 import { deleteCabin } from "../../services/apiCabins";
-import { useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export function useDeleteCabin() {
   const queryClient = useQueryClient();
@@ -9,7 +9,7 @@ export function useDeleteCabin() {
   const {isPending: isDeleting, mutate} = useMutation({
     mutationFn: deleteCabin,
     onSuccess: () => {
-      toast.sucess("Cabin successfully deleted");
+      toast.success("Cabin successfully deleted");
 
       queryClient.invalidateQueries({
         queryKey: ["cabins"],
