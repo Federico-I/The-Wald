@@ -44,8 +44,6 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
-const queryClient = useQueryClient();
-
 function CabinRow({ cabin }) {
   const [showForm, setShowForm] = useState(false);
 
