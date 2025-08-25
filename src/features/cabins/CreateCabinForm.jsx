@@ -12,6 +12,7 @@ import FormRow from "../../ui/FormRow";
 
 import { useForm } from "react-hook-form";
 import { CreateEditCabinF } from "../../services/apiCabins";
+import { useCreateCabin } from "./useCreate";
 
 function CreateCabinForm({ editCabin = {} }) {
   const { id: editId, ...editValues } = editCabin;
@@ -22,6 +23,7 @@ function CreateCabinForm({ editCabin = {} }) {
   });
   const { errors } = formState;
 
+  const { isCreating, createCabin } = useCreateCabin();
 
   const { mutate: editCabin, isPending: isEditing } = useMutation({
     mutationFn: ({ newCabinData, id }) => CreateEditCabinF(newCabinData, id),
