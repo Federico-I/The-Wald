@@ -25,15 +25,7 @@ function CreateCabinForm({ editCabin = {} }) {
 
   const { isCreating, createCabin } = useCreateCabin();
 
-  const { mutate: editCabin, isPending: isEditing } = useMutation({
-    mutationFn: ({ newCabinData, id }) => CreateEditCabinF(newCabinData, id),
-    onSuccess: () => {
-      toast.success("New cabin successfully created");
-      queryClient.invalidateQueries({ queryKey: ["cabin"] });
-      reset();
-    },
-    onError: (err) => toast.error(err.message),
-  });
+
 
   const isWorking = isCreating || isEditing;
 
