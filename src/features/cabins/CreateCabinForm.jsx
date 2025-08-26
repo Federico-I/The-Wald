@@ -41,7 +41,7 @@ function CreateCabinForm({ editCabin = {} }) {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
     if (isEditSession) editCabin({ newCabinData: { ...data, image }, id: editId });
-    else createCabin({ ...data, image: data.image });
+    else createCabin({ ...data, image: data.image },{onSuccess: (data) => reset(),});
   };
 
   function onError(errors){
