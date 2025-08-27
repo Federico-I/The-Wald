@@ -1,7 +1,8 @@
- import react from "react";
+import react from "react";
+import { useQueryClient } from "@tanstack/react-query";
+import { CreateEditCabinF } from "../../services/apiCabins";
 
-export function useEditCabin(){
-
+export function useEditCabin() {
  const queryClient = useQueryClient();
  
  const { mutate: editCabin, isPending: isEditing } = useMutation({
@@ -13,5 +14,4 @@ export function useEditCabin(){
     },
     onError: (err) => toast.error(err.message),
   });
-
 }
