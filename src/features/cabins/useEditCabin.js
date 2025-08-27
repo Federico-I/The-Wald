@@ -1,6 +1,7 @@
 import react from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { CreateEditCabinF } from "../../services/apiCabins";
+import toast from "react-hot-toast";
 
 export function useEditCabin() {
  const queryClient = useQueryClient();
@@ -14,4 +15,6 @@ export function useEditCabin() {
     },
     onError: (err) => toast.error(err.message),
   });
+
+  return { isEditing, editCabin };
 }
