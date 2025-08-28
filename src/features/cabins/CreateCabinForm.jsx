@@ -1,7 +1,6 @@
 import react from "react";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { toast } from "react-hot-toast";
 
 import Input from "../../ui/Input";
 import Form from "../../ui/Form";
@@ -11,7 +10,6 @@ import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 import { useCreateCabin } from "./useCreateCabin";
 import { useForm } from "react-hook-form";
-import { CreateEditCabinF } from "../../services/apiCabins";
 import { useEditCabin } from "./useEditCabin";
 
 
