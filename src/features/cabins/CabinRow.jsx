@@ -5,6 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { CreateCabinForm, deleteCabin } from "../../services/apiCabins";
 import toast from "react-hot-toast";
 import { useDeleteCabin } from "./useDeleteCabin";
+import { HiSquare2Stack } from "react-icons/hi2";
 
 const TableRow = styled.div`
   display: grid;
@@ -60,6 +61,9 @@ function CabinRow({ cabin }) {
         <Price>{formatCurrency(regularPrice)}</Price>
         <Discount>{formatCurrency(discount)}</Discount>
         <div>
+          <button>
+            <HiSquare2Stack />
+          </button>
           <button onClick={() => setShowForm((show) => !show)}>Edit</button>
           <button onClick={()=> deleteCabin(cabinId)} disabled={isDeleting}>Delete</button>
         </div>
