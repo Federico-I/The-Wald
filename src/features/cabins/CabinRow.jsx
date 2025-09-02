@@ -6,6 +6,7 @@ import { CreateCabinForm, deleteCabin } from "../../services/apiCabins";
 import toast from "react-hot-toast";
 import { useDeleteCabin } from "./useDeleteCabin";
 import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
+import { useCreateCabin } from "./useCreateCabin";
 
 const TableRow = styled.div`
   display: grid;
@@ -49,6 +50,7 @@ const Discount = styled.div`
 function CabinRow({ cabin }) {
   const [showForm, setShowForm] = useState(false);
   const { isDeleting, deleteCabin } = useDeleteCabin();
+  const {isCreating, createCabin} = useCreateCabin();
   
   const { name, maxCapacity, regularPrice, discount, image } = cabin;
   
