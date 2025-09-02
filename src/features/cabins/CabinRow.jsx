@@ -51,6 +51,10 @@ function CabinRow({ cabin }) {
   const [showForm, setShowForm] = useState(false);
   const { isDeleting, deleteCabin } = useDeleteCabin();
   const {isCreating, createCabin} = useCreateCabin();
+
+  function handleDuplicate() {
+    createCabin()
+  }
   
   const { name, maxCapacity, regularPrice, discount, image } = cabin;
   
