@@ -52,16 +52,11 @@ function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
   const {isCreating, createCabin} = useCreateCabin();
   
-  const { name, maxCapacity, regularPrice, discount, image } = cabin;
+  const { id: cabinId, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   function handleDuplicate() {
     createCabin({
       name: `Copy of ${name}`,
-      maxCapacity, 
-      regularPrice,
-      discount,
-      image,
-      description, 
     })
   };
   
