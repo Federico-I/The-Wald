@@ -1,11 +1,14 @@
+import { CgSpinner } from 'react-icons/cg';
 import Form from '../../ui/Form';
 import FormRow from '../../ui/FormRow';
 import Input from '../../ui/Input';
 import { useSettings } from './useSettings';
 
 function UpdateSettingsForm() {
-  const { isLoading, settings: { minBookingLength, maxBookingLength, maxGuestPerBooking, breakfastPrice }, 
+  const { isLoading, settings: { minBookingLength, maxBookingLength, maxGuestPerBooking, breakfastPrice } = {}, 
   } = useSettings();
+
+  if(isLoading) return <CgSpinner />;
 
   return (
     <Form>
