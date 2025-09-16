@@ -1,6 +1,6 @@
 import react from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { CreateEditCabinF } from "../../services/apiCabins";
+import { updateSetting as updateSettingAPI };
 import toast from "react-hot-toast";
 
 export function useEditSetting() {
