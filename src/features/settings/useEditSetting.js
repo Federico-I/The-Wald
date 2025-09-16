@@ -6,8 +6,8 @@ import toast from "react-hot-toast";
 export function useEditSetting() {
  const queryClient = useQueryClient();
  
- const { mutate: editSetting, isPending: isEditing } = useMutation({
-    mutationFn: ({ newCabinData, id }) => CreateEditCabinF(newCabinData, id),
+ const { mutate: updateSetting, isPending: isEditing } = useMutation({
+    mutationFn: updateSetting,
     onSuccess: () => {
       toast.success("New cabin successfully created");
       queryClient.invalidateQueries({ queryKey: ["cabin"] });
@@ -16,5 +16,5 @@ export function useEditSetting() {
     onError: (err) => toast.error(err.message),
   });
 
-  return { isEditing, editSetting };
+  return { isEditing, updateSetting };
 }
