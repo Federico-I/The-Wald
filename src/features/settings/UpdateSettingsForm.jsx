@@ -9,6 +9,8 @@ function UpdateSettingsForm() {
   const { isLoading, settings: { minBookingLength, maxBookingLength, maxGuestPerBooking, breakfastPrice } = {}, 
   } = useSettings();
 
+  const { isUpdateing, updateSetting } = useUpdateSetting();
+
   if(isLoading) return <CgSpinner />;
 
   return (
