@@ -16,7 +16,7 @@ function UpdateSettingsForm() {
   return (
     <Form>
       <FormRow label='Minimum nights/booking'>
-        <Input type='number' id='min-nights' defaultValue={minBookingLength}/>
+        <Input type='number' id='min-nights' defaultValue={minBookingLength} onBlur={(e) => handleUpdate(e, "miniBookinglenght")}/>
       </FormRow>
       <FormRow label='Maximum nights/booking'>
         <Input type='number' id='max-nights' defaultValue={maxBookingLength}/>
