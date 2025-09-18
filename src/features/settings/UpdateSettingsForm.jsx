@@ -13,11 +13,11 @@ function UpdateSettingsForm() {
 
   if(isLoading) return <CgSpinner />;
 
-  function handleUpdate() {
+  function handleUpdate(e, field) {
     const { value } = e.target;
 
     if(!value) return;
-    updateSetting;
+    updateSetting({ [field]: value});
   }
 
   return (
