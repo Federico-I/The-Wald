@@ -13,6 +13,10 @@ function UpdateSettingsForm() {
 
   if(isLoading) return <CgSpinner />;
 
+  function handleUpdate() {
+    const { value } = e.target;
+  }
+
   return (
     <Form>
       <FormRow label='Minimum nights/booking'>
