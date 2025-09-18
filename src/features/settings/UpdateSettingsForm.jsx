@@ -15,6 +15,9 @@ function UpdateSettingsForm() {
 
   function handleUpdate() {
     const { value } = e.target;
+
+    if(!value) return;
+    updateSetting;
   }
 
   return (
