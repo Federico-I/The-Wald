@@ -3,6 +3,7 @@ import Form from '../../ui/Form';
 import FormRow from '../../ui/FormRow';
 import Input from '../../ui/Input';
 import { useSettings } from './useSettings';
+import { useUpdateSetting } from './useUpdateSetting';
 
 function UpdateSettingsForm() {
   const { isLoading, settings: { minBookingLength, maxBookingLength, maxGuestPerBooking, breakfastPrice } = {}, 

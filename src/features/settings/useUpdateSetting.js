@@ -9,7 +9,7 @@ export function useUpdateSetting() {
  const { mutate: updateSetting, isPending: isUpdateing } = useMutation({
     mutationFn: updateSettingAPI,
     onSuccess: () => {
-      toast.success("New cabin successfully created");
+      toast.success("Settings successfully created");
       queryClient.invalidateQueries({ queryKey: ["settings"] });
       reset();
     },
