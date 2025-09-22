@@ -4,9 +4,9 @@ import { updateSetting as updateSettingAPI } from "../../services/apiSettings";
 import toast from "react-hot-toast";
 
 export function useUpdateSetting() {
- const queryClient = useQueryClient();
- 
- const { mutate: updateSetting, isPending: isUpdateing } = useMutation({
+  const queryClient = useQueryClient();
+
+  const { mutate: updateSetting, isPending: isUpdateing } = useMutation({
     mutationFn: updateSettingAPI,
     onSuccess: () => {
       toast.success("Settings successfully created");
@@ -17,4 +17,4 @@ export function useUpdateSetting() {
   });
 
   return { isUpdateing, updateSetting };
-}
+};
