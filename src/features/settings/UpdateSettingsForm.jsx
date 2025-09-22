@@ -9,7 +9,7 @@ function UpdateSettingsForm() {
   const { isLoading, settings: { minBookingLength, maxBookingLength, maxGuestPerBooking, breakfastPrice } = {}, 
   } = useSettings();
 
-  const { isUpdateing, updateSetting } = useUpdateSetting();
+  const { isUpdating, updateSetting } = useUpdateSetting();
 
   if(isLoading) return <CgSpinner />;
 
@@ -23,7 +23,7 @@ function UpdateSettingsForm() {
   return (
     <Form>
       <FormRow label='Minimum nights/booking'>
-        <Input type='number' id='min-nights' defaultValue={minBookingLength} onBlur={(e) => handleUpdate(e, "miniBookinglenght")}/>
+        <Input type='number' id='min-nights' disabled={isUpdating} defaultValue={minBookingLength} onBlur={(e) => handleUpdate(e, "miniBookinglenght")}/>
       </FormRow>
       <FormRow label='Maximum nights/booking'>
         <Input type='number' id='max-nights' defaultValue={maxBookingLength}/>
