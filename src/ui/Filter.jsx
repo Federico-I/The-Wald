@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { css } from "styled-components";
 
 const StyledFilter = styled.div`
@@ -33,3 +34,18 @@ const FilterButton = styled.button`
     color: var(--color-brand-50);
   }
 `;
+
+function Filter() {
+
+  function handleClick(value) {};
+
+  return (
+    <StyledFilter>
+      <FilterButton onClick={() => handleClick("all")}>All</FilterButton>
+      <FilterButton onClick={() => handleClick("no-discount")}>No discount</FilterButton>
+      <FilterButton onClick={() => handleClick("with-discount")}>With discount</FilterButton>
+    </StyledFilter>
+  )
+};
+
+export default Filter;

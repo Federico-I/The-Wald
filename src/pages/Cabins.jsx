@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 import CreateCabinForm from "../features/cabins/CreateCabinForm";
+import CabinTableOperatinos from "../features/cabins/CabinTableOperatinos";
 
 function Cabins() {
   const [showForm, setShowForm] = useState(false);
@@ -10,7 +11,7 @@ function Cabins() {
     <>
       <Row type="horizontal">
         <Heading as="h1">All cabins</Heading>
-        <p>Filter / Sort</p>
+        <CabinTableOperatinos />
       </Row>
       <Row>
         <CabinTable />
