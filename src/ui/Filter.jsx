@@ -1,4 +1,5 @@
 import React from "react";
+import { useSearchParams } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const StyledFilter = styled.div`
@@ -36,6 +37,7 @@ const FilterButton = styled.button`
 `;
 
 function Filter() {
+  const [searchParams, setSearchParams] = useSearchParams();
 
   function handleClick(value) {};
 
