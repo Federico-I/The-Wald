@@ -35,6 +35,8 @@ function CabinTable() {
 
   if(isPending) return <Spinner />
 
+  const filterValue = searchParams.get("discount");
+
   return (
     <Table>
       <TableHeader>
