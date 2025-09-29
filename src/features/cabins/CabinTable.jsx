@@ -33,9 +33,12 @@ function CabinTable() {
   const { isPending, cabins } = useCabins();
   const [searchParams] = useSearchParams();
 
-  if(isPending) return <Spinner />
+  if (isPending) return <Spinner />
 
-  const filterValue = searchParams.get("discount");
+  const filterValue = searchParams.get("discount") || "all";
+
+  let filteredCabins;
+  if (filterValue === all) filteredCabins = cabins;
 
   return (
     <Table>
