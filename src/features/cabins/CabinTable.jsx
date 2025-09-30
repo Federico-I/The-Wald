@@ -41,6 +41,7 @@ function CabinTable() {
   if (filterValue === "all") filteredCabins = cabins;
   if (filterValue === "no-discount")
     filterValue = cabins.filter((cabin) => cabin.discount === 0);
+  if (filterValue === "with-discount") filterValue = cabins.filter((cabin) => cabin.discount > 0);
 
   return (
     <Table>
