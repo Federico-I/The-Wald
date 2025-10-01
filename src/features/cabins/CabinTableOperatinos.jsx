@@ -5,7 +5,9 @@ import Filter from "";
 function CabinTableOperatinos() {
   return (
     <TableOperations>
-      <Filter />
+      <Filter filterField="discount" options={[
+        {value: "all", label: "All"}
+      ]}/>
     </TableOperations>
   )
 }
