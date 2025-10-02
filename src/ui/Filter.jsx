@@ -47,7 +47,7 @@ function Filter({ filterField, options }) {
   return (
     <StyledFilter>
       {options.map(option => 
-        <FilterButton onClick={() => handleClick(option.value)}>{option.lable}</FilterButton>
+        <FilterButton key={option.value} onClick={() => handleClick(option.value)}>{option.lable}</FilterButton>
       )}
     </StyledFilter>
   )
