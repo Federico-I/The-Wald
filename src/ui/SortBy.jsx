@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SortBy() {
+function SortBy({ options }) {
   return (
     <div>SortBy</div>
   )
