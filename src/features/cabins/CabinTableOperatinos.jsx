@@ -1,6 +1,7 @@
 import React from 'react';
 import TableOperations from "../../ui/TableOperations";
 import Filter from "";
+import SortBy from '../../ui/SortBy';
 
 function CabinTableOperatinos() {
   return (
@@ -9,6 +10,11 @@ function CabinTableOperatinos() {
         {value: "all", label: "All"},
         {value: "no-discount", label: "No discount"},
         {value: "with-discount", label: "With discount"}
+      ]}/>
+
+      <SortBy options={[
+        {value: "name-asc", label: "Sort by name (A-Z)"},
+        {value: "", label: "Sort by name (Z-A)"},
       ]}/>
     </TableOperations>
   )
