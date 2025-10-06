@@ -17,8 +17,8 @@ function CabinTableOperatinos() {
         {value: "name-desc", label: "Sort by name (Z-A)"},
         {value: "regularPrice-asc", label: "Sort by price (low to high)"},
         {value: "regularPrice-des", label: "Sort by price (high to lowa)"},
-        {value: "MaxCapacity-asc", label: "Sort by Capacity (max to min)"},
-        {value: "MaxCapacity-des", label: "Sort by Capacity (max to min)"}
+        {value: "maxCapacity-asc", label: "Sort by Capacity (max to min)"},
+        {value: "minCapacity-des", label: "Sort by Capacity (min to max)"}
       ]}/>
     </TableOperations>
   )
