@@ -15,6 +15,8 @@ function CabinTableOperatinos() {
       <SortBy options={[
         {value: "name-asc", label: "Sort by name (A-Z)"},
         {value: "name-desc", label: "Sort by name (Z-A)"},
+        {value: "regularPrice-asc", label: "Sort by price (low to high)"},
+        {value: "regularPrice-des", label: "Sort by price (high to lowa)"}
       ]}/>
     </TableOperations>
   )
