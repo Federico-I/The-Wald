@@ -1,8 +1,9 @@
 import React from 'react';
+import Select from './Select';
 
 function SortBy({ options }) {
   return (
-    <div>SortBy</div>
+    <Select options={options}/>
   )
 };
 
