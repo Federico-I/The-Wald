@@ -35,6 +35,7 @@ function CabinTable() {
 
   if (isPending) return <Spinner />
 
+  // Filter
   const filterValue = searchParams.get("discount") || "all";
 
   let filteredCabins;
@@ -42,6 +43,9 @@ function CabinTable() {
   if (filterValue === "no-discount")
     filteredCabins = cabins.filter((cabin) => cabin.discount === 0);
   if (filterValue === "with-discount") filteredCabins = cabins.filter((cabin) => cabin.discount > 0);
+
+  // Sort
+  const sortBy = searchParams.get("sortBy") || "startDate-asc";
 
   return (
     <Table>
