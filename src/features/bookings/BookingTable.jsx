@@ -5,6 +5,8 @@ import Menus from "../../ui/Menus";
 function BookingTable() {
   const bookings = [];
 
+  if (!bookings.length) return <Empty resourceName="booking" />
+
   return (
     <Menus>
       <Table columns="0.6fr 2fr 2.4fr 1.4fr 1fr 3.2rem">

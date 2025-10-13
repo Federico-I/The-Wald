@@ -8,6 +8,8 @@ export async function getBookings () {
   if (error) {
     throw new Error("Bookings could not be loaded");
   }
+
+  return data;
 }
 
 export async function getBooking(id) {
