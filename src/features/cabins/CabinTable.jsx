@@ -49,7 +49,7 @@ function CabinTable() {
   const [field, direction] = sortBy.split("-");
   const modifier = direction === "asc" ? 1 : -1;
   
-  const sortedCabins = filteredCabins.sort((a,b) => a[field] - b[field]) * modifier;
+  const sortedCabins = filteredCabins.sort((a,b) => (a[field] - b[field]) * modifier);
 
   return (
     <Table>

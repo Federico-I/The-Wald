@@ -2,6 +2,10 @@ import react from "react";
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 
+export async function getBookings () {
+  const { data, error } = await supabase.from("bookings").select("*");
+}
+
 export async function getBooking(id) {
   const { data, error } = await supabase
     .from("bookings")
