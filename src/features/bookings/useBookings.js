@@ -1,6 +1,5 @@
 import react from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getCabins } from "../../services/apiCabins";
 import { getBookings } from "../../services/apiBookings";
 
 export function useBookings() {
@@ -9,5 +8,5 @@ export function useBookings() {
     queryFn: getBookings,
   });
 
-  return { isPending, error, cabins };
+  return { isPending, error, bookings };
 };

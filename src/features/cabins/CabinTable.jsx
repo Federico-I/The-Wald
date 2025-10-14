@@ -1,7 +1,8 @@
-import React from "react";
+import react from "react";
 import styled from "styled-components";
 import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
+import Empty from "../../ui/Empty";
 import { useCabins } from "./useCabins";
 import { useSearchParams } from "react-router-dom";
 

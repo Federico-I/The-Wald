@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import { useSearchParams } from "react-router-dom";
 import styled, { css } from "styled-components";
 
