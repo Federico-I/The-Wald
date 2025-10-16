@@ -8,6 +8,7 @@ export function useBookings() {
 
   // Filter
   const filterValue = searchParams.get("status");
+  const filter = !filterValue || filterValue === "all" ? null : { field: "status", value: filterValue };
 
   const {isPending, data: bookings, error} = useQuery({
     queryKey: ["bookings"],
