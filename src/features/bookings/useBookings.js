@@ -12,7 +12,7 @@ export function useBookings() {
 
   const {isPending, data: bookings, error} = useQuery({
     queryKey: ["bookings"],
-    queryFn: getBookings,
+    queryFn: () => getBookings({ filter }),
   });
 
   return { isPending, error, bookings };
