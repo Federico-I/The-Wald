@@ -56,3 +56,15 @@ const PaginationButton = styled.button`
     color: var(--color-brand-50);
   }
 `;
+
+function Pagination() {
+  return (
+    <styledPagination>
+      <p>
+        Showing <span>1</span> to <span>10</span> of <span>23</span> results
+      </p>
+    </styledPagination>
+  )
+};
+
+export default Pagination;
