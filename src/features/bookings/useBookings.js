@@ -17,7 +17,7 @@ export function useBookings() {
 
   const sortBy = { field, direction};
 
-  const {isPending, data: bookings, error} = useQuery({
+  const {isPending, data: {data: bookings, error}} = useQuery({
     queryKey: ["bookings", filter],
     queryFn: () => getBookings({ filter }),
   });
