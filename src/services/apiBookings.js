@@ -18,6 +18,14 @@ export async function getBookings({ filter, sortBy }) {
     ascending: sortBy.direction === "asc",
   });
 
+  // Pagination
+
+  if (page) {
+    const from = 
+    
+    query = query.range(from, to);    
+  } 
+
   const { data, error, count } = await query; 
 
   if (error) {
