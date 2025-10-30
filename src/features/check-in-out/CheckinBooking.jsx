@@ -9,6 +9,7 @@ import ButtonText from "../../ui/ButtonText";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/useBooking";
+import { useEffect } from "react";
 
 const Box = styled.div`
   /* Box */
@@ -19,9 +20,14 @@ const Box = styled.div`
 `;
 
 function CheckinBooking() {
-  
+  const [confirmPaid, setConfirmPaid] = useState(false);
   const {booking, isPending} = useBooking();
+
+  useEffect(() => setConfirmPaid(booking?.isPaid ?? false), [booking]);
+
   const moveBack = useMoveBack();
+
+  if (isPending) return <Spinner/>;
 
   const {
     id: bookingId,
@@ -43,8 +49,14 @@ function CheckinBooking() {
 
       <BookingDataBox booking={booking} />
 
+      <Box>
+        <CheckBox checked={confirmPaid} onChange={() => setConfirmPaid((confirm) => !confirm)} disabled={confirmPaid} id="confirm">
+          I confirm that {guests.fullName} has paid the total amount {}
+        </CheckBox>
+      </Box>
+
       <ButtonGroup>
-        <Button onClick={handleCheckin}>Check in booking #{bookingId}</Button>
+        <Button onClick={handleCheckin} disabled={!confirmPaid}>Check in booking #{bookingId}</Button>
         <Button variation="secondary" onClick={moveBack}>
           Back
         </Button>
