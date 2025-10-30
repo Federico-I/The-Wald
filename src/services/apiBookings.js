@@ -34,7 +34,7 @@ export async function getBookings({ filter, sortBy }) {
   }
 
   return { data, count };
-}
+};
 
 export async function getBooking(id) {
   const { data, error } = await supabase
@@ -49,7 +49,7 @@ export async function getBooking(id) {
   }
 
   return data;
-}
+};
 
 // Returns all BOOKINGS that are were created after the given date. Useful to get bookings created in the last 30 days, for example.
 export async function getBookingsAfterDate(date) {
@@ -65,7 +65,7 @@ export async function getBookingsAfterDate(date) {
   }
 
   return data;
-}
+};
 
 // Returns all STAYS that are were created after the given date
 export async function getStaysAfterDate(date) {
@@ -82,7 +82,7 @@ export async function getStaysAfterDate(date) {
   }
 
   return data;
-}
+};
 
 // Activity means that there is a check in or a check out today
 export async function getStaysTodayActivity() {
@@ -103,7 +103,7 @@ export async function getStaysTodayActivity() {
     throw new Error("Bookings could not get loaded");
   }
   return data;
-}
+};
 
 export async function updateBooking(id, obj) {
   const { data, error } = await supabase
@@ -118,7 +118,7 @@ export async function updateBooking(id, obj) {
     throw new Error("Booking could not be updated");
   }
   return data;
-}
+};
 
 export async function deleteBooking(id) {
   // REMEMBER RLS POLICIES
@@ -129,4 +129,4 @@ export async function deleteBooking(id) {
     throw new Error("Booking could not be deleted");
   }
   return data;
-}
+};
