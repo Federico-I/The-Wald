@@ -12,6 +12,7 @@ import { useBooking } from "../bookings/useBooking";
 import { useEffect } from "react";
 import { formatCurrency } from "../../utils/helpers";
 import { useCheckin } from "./useCheckin";
+import { useSettings } from "../settings/useSettings";
 
 const Box = styled.div`
   /* Box */
@@ -25,6 +26,7 @@ function CheckinBooking() {
   const [confirmPaid, setConfirmPaid] = useState(false);
   const [addBreakfast, setAddBreaksft] = useState();
   const {booking, isPending} = useBooking();
+  const {settings, isPending: isLoadingSettings} = useSettings();
 
   useEffect(() => setConfirmPaid(booking?.isPaid ?? false), [booking]);
 
@@ -63,9 +65,13 @@ function CheckinBooking() {
       </Box>
 
       <Box>
-        <CheckBox checked={addBreakfast} onChange={() => {setAddBreaksft((add) => !add);
-          
-        }}>
+        <CheckBox checked={addBreakfast} onChange={() => {
+          setAddBreaksft((add) => !add);
+          setConfirmPaid(false);
+          }}
+          id="breakfast"
+        >
+          Want to add breakasft for 
         </CheckBox>
       </Box>
 
