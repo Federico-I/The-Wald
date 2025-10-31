@@ -44,6 +44,8 @@ function CheckinBooking() {
     numNights,
   } = booking;
 
+  const optionalBreakfastPrice = settings.breakfastPrice * numNights * numGuests;
+
   function handleCheckin() {
     if (!confirmPaid) return;
     checkin(bookingId);
@@ -64,16 +66,18 @@ function CheckinBooking() {
         </CheckBox>
       </Box>
 
-      <Box>
-        <CheckBox checked={addBreakfast} onChange={() => {
-          setAddBreaksft((add) => !add);
-          setConfirmPaid(false);
-          }}
-          id="breakfast"
-        >
-          Want to add breakasft for 
-        </CheckBox>
-      </Box>
+      { !hasBreakfast && 
+        <Box>
+          <CheckBox checked={addBreakfast} onChange={() => {
+            setAddBreaksft((add) => !add);
+            setConfirmPaid(false);
+            }}
+            id="breakfast"
+          >
+            Want to add breakasft for {optionalBreakfastPrice} euros?
+          </CheckBox>
+        </Box>
+      }
 
       <ButtonGroup>
         <Button onClick={handleCheckin} disabled={!confirmPaid || isCheckingIn}>Check in booking #{bookingId}</Button>
