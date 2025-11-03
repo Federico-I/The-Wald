@@ -33,7 +33,7 @@ function CheckinBooking() {
   const moveBack = useMoveBack();
   const { checkin, isCheckingIn } = useCheckin();
 
-  if (isPending) return <Spinner/>;
+  if (isPending || isLoadingSettings) return <Spinner/>;
 
   const {
     id: bookingId,
@@ -48,8 +48,13 @@ function CheckinBooking() {
 
   function handleCheckin() {
     if (!confirmPaid) return;
+
+    if (addBreakfast) {
+      checkin()
+    } else {
     checkin(bookingId);
-  }
+    }
+  };
 
   return (
     <>
@@ -62,11 +67,11 @@ function CheckinBooking() {
 
       <Box>
         <CheckBox checked={confirmPaid} onChange={() => setConfirmPaid((confirm) => !confirm)} disabled={confirmPaid || isCheckingIn} id="confirm">
-          I confirm that {guests.fullName} has paid the total amount {formatCurrency(totalPrice)}
+          I confirm that {guests.fullName} has paid the total amount {!addBreakfast ? formatCurrency(totalPrice) : `${formatCurrency(totalPrice + optionalBreakfastPrice)} + ${formatCurrency(optionalBreakfastPrice)}.`}
         </CheckBox>
       </Box>
 
-      { !hasBreakfast && 
+      { !hasBreakfast && (
         <Box>
           <CheckBox checked={addBreakfast} onChange={() => {
             setAddBreaksft((add) => !add);
@@ -74,10 +79,10 @@ function CheckinBooking() {
             }}
             id="breakfast"
           >
-            Want to add breakasft for {optionalBreakfastPrice} euros?
+            Want to add breakasft for {formatCurrency(optionalBreakfastPrice)} euros?
           </CheckBox>
         </Box>
-      }
+      )}
 
       <ButtonGroup>
         <Button onClick={handleCheckin} disabled={!confirmPaid || isCheckingIn}>Check in booking #{bookingId}</Button>
