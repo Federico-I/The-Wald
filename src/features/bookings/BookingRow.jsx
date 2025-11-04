@@ -100,7 +100,7 @@ function BookingRow({
               <Menus.Button icon={<HiArrowUpOnSquare />} onClick={() => checkout(bookingId)} disabled={isCheckingOut}> Check out
               </Menus.Button> 
             )}
-            <Modal.Open open="delete">
+            <Modal.Open opens="delete">
               <Menu.Button icon={<HiTrash />}>
                 Delete Booking
               </Menu.Button>
@@ -108,7 +108,7 @@ function BookingRow({
           </Menus.List>
         </Menus.Menu>
         <Modal.Window name="delete">
-          <ConfirmDelete resourceName="booking" onConfirm={() => {deleteBooking(bookingId)}}/>
+          <ConfirmDelete resourceName="booking" onConfirm={() => deleteBooking(bookingId, {onSettled: () => navigate(-1)})}/>
         </Modal.Window>
       </Modal>
     </Table.Row>
