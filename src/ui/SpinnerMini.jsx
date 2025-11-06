@@ -1,3 +1,4 @@
+import react from "react";
 import styled, { keyframes } from "styled-components";
 import { BiLoaderAlt } from "react-icons/bi";
 

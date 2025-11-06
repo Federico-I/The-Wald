@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import styled from "styled-components";
 import LoginForm from "../features/authentication/LoginForm";
 import Heading from "../ui/Heading";
