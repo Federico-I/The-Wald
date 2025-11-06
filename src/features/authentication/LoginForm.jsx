@@ -10,10 +10,10 @@ function LoginForm() {
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     if(!email || !password) return
 
-    login({ email, password });
+    // login({ email, password });
   }
 
   return (
