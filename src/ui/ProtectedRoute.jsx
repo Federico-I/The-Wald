@@ -18,7 +18,12 @@ function ProtectedRoute({ children }) {
   // 1 Load the authenticated user
   const { isPending, isAuthenticated} = useUser();
 
-  // 2 wWhile loading, show a spinner
+  // 2 if there is Noautheticated User, redirect to the /login
+  useEffect(function(){
+    if (!isAuthenticated && !isPending) navigate("/login");
+  }, [isAuthenticated, isPending, navigate]);
+
+  // 3 wWhile loading, show a spinner
   if (isPending) 
     return ( 
       <FullPage>
@@ -26,12 +31,8 @@ function ProtectedRoute({ children }) {
       </FullPage>
     );
 
-  // 3 if there is Noautheticated User, redirect to the /login
-  useEffect(function(){
-    if (!isAuthenticated) navigate("/login");
-  }, []);
-  
-  return children;
+  // 4 If there IS a user, render the app
+  if (isAuthenticated) return children;
 };
 
 export default ProtectedRoute;
