@@ -7,15 +7,18 @@ import Input from "../../ui/Input";
 // Email regex: /\S+@\S+\.\S+/
 
 function SignupForm() {
+  const { signup, isPending } = useSigneup();
   const { register, formState, getValues, handleSubmit} = useForm();
   const { errors } = formState;
 
-  function onSubmit(data) {
-
+  function onSubmit({ fullName, email, password }) {
+    signup({ fullName, email, password }, {
+      onSettled: reset,
+    })
   }
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <FormRow label="Full name" error={errors?.fullName?.message}>
         <Input type="text" id="fullName" {...register("fullName", { required: "This field is required" })}/>
       </FormRow>
