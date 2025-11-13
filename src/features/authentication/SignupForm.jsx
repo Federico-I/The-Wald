@@ -8,23 +8,23 @@ import Input from "../../ui/Input";
 
 function SignupForm() {
   const { signup, isPending } = useSigneup();
-  const { register, formState, getValues, handleSubmit} = useForm();
+  const { register, formState, getValues, handleSubmit, reset} = useForm();
   const { errors } = formState;
 
   function onSubmit({ fullName, email, password }) {
     signup({ fullName, email, password }, {
-      onSettled: reset,
-    })
+      onSettled: () => reset(),
+    });
   }
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <FormRow label="Full name" error={errors?.fullName?.message}>
-        <Input type="text" id="fullName" {...register("fullName", { required: "This field is required" })}/>
+        <Input type="text" id="fullName" disabled={isPending} {...register("fullName", { required: "This field is required" })}/>
       </FormRow>
 
       <FormRow label="Email address" error={errors?.email?.message}>
-        <Input type="email" id="email" {
+        <Input type="email" id="email" disabled={isPending} {
           ...register("email", 
           { required: "This field is required", pattern: { value: /\S+@\S+\.\S+/, message:"Please provide a valid email address" }, 
         })}/>
