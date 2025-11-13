@@ -1,4 +1,7 @@
 import react from 'react';
+import ButtonIcon from './ButtonIcon';
+import { HiOutlineUser } from 'react-icons/hi2';
+import Logout from '../features/authentication/Logout';
 
 const StyledHeaderMenu = styled.ul`
   display: flex;
@@ -7,7 +10,16 @@ const StyledHeaderMenu = styled.ul`
 
 function HeaderMenu() {
   return (
-    <div>HeaderMenu</div>
+    <StyledHeaderMenu>
+      <li>
+        <ButtonIcon>
+          <HiOutlineUser />
+        </ButtonIcon>
+      </li>
+      <li>
+        <Logout />
+      </li>
+    </StyledHeaderMenu>
   );
 }
 
