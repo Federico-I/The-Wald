@@ -1,3 +1,4 @@
+import react from "react";
 import styled from "styled-components";
 
 const StyledUserAvatar = styled.div`
@@ -19,3 +20,16 @@ const Avatar = styled.img`
   border-radius: 50%;
   outline: 2px solid var(--color-grey-100);
 `;
+
+function UserAvatar() {
+  const { user } = useUser();
+  const { fullName, avatar } = user.user_metadata;
+
+  return (
+    <StyledUserAvatar>
+      <Avatar src={avatar || "deafult-user.jpg"} alt={`Avatar of ${fullName}`}/>
+    </StyledUserAvatar>
+  );
+}
+
+export default UserAvatar;
