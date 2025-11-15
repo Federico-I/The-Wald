@@ -2,6 +2,7 @@ import react from 'react';
 import ButtonIcon from './ButtonIcon';
 import { HiOutlineUser } from 'react-icons/hi2';
 import Logout from '../features/authentication/Logout';
+import { useNavigate } from 'react-router-dom';
 
 const StyledHeaderMenu = styled.ul`
   display: flex;
@@ -9,10 +10,12 @@ const StyledHeaderMenu = styled.ul`
 `;
 
 function HeaderMenu() {
+  const navigate = useNavigate();
+
   return (
     <StyledHeaderMenu>
       <li>
-        <ButtonIcon>
+        <ButtonIcon onClick={() => navigate("/account")}>
           <HiOutlineUser />
         </ButtonIcon>
       </li>
