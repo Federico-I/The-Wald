@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import { createGlobalStyle } from "styled-components";
 
 const createGlobalStyle = createGlobalStyle`
