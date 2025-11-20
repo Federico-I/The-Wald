@@ -1,3 +1,4 @@
+import react from "react";
 import { useState, useEffect } from "react";
 
 export function useLocalStorageState(initialState, key) {
@@ -14,4 +15,5 @@ export function useLocalStorageState(initialState, key) {
   );
 
   return [value, setValue];
-}
+};
+
