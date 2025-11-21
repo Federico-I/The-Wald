@@ -1,3 +1,4 @@
+import react from 'react';
 import Filter from 'ui/Filter';
 
 function DashboardFilter() {
