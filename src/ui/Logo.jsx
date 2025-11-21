@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import styled from "styled-components";
 
 const StyledLogo = styled.div`
@@ -13,11 +13,11 @@ const Img = styled.img`
 function Logo() {
   const { isDarkMode } = useDarkMode();
 
-  const src = isDarkMode ? "" : "/logo-light.png";
+  const src = isDarkMode ? "/logo-dark.png" : "/logo-light.png";
 
   return (
     <StyledLogo>
-      <Img src="" alt="Logo" />
+      <Img src={src} alt="Logo" />
     </StyledLogo>
   );
 }
