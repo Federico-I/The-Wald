@@ -9,6 +9,11 @@ const StyledDashboardLayout = styled.div`
 `;
 
 function DashboardLayout() {
+
+  const {bookings, isPending} = useRecentBookings()
+
+  if(isPending) return <Spinner />
+
   return (
     <StyledDashboardLayout>
       <div>Statistics</div>
