@@ -14,7 +14,7 @@ function DashboardLayout() {
   const {bookings, isPending} = useRecentBookings();
   const {stays, confirmedStays, isPending: isPending2} = useRecentStays();
 
-  if(isPending) return <Spinner />
+  if(isPending || isPending2) return <Spinner />
 
   return (
     <StyledDashboardLayout>
