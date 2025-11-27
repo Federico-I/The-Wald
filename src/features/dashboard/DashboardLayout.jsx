@@ -11,10 +11,11 @@ const StyledDashboardLayout = styled.div`
 
 function DashboardLayout() {
 
-  const {bookings, isPending} = useRecentBookings();
-  const {stays, confirmedStays, isPending: isPending2} = useRecentStays();
+  const { bookings, isPending } = useRecentBookings();
+  const { stays, confirmedStays, isPending: isPending2 } = useRecentStays();
+  const { cabins, isLoading: isLoading3 } = useCabins();
 
-  if(isPending || isPending2) return <Spinner />
+  if(isPending || isPending2 || isLoading3) return <Spinner />
 
   return (
     <StyledDashboardLayout>

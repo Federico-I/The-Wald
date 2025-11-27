@@ -3,7 +3,7 @@ import { HiOutlineBriefcase, HiOutlineChartBar } from 'react-icons/hi';
 import { HiOutlineBanknotes, HiOutlineCalendarDays } from 'react-icons/hi2';
 import { formatCurrency } from '../../utils/helpers';
 
-function Stats({ bookings, confirmedStays }) {
+function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
 
   const numBookings = bookings.lenght;
 
