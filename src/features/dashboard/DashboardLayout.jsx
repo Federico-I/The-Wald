@@ -1,5 +1,6 @@
 import react from "react";
 import styled from "styled-components";
+import { useRecentStays } from "./useRecentStays";
 
 const StyledDashboardLayout = styled.div`
   display: grid;
@@ -10,7 +11,8 @@ const StyledDashboardLayout = styled.div`
 
 function DashboardLayout() {
 
-  const {bookings, isPending} = useRecentBookings()
+  const {bookings, isPending} = useRecentBookings();
+  const {stays, confirmedStays, isPending: isPending2} = useRecentStays();
 
   if(isPending) return <Spinner />
 
