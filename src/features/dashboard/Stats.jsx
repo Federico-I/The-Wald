@@ -18,7 +18,7 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
       <Stats title="Bookings" color="blue" icon={<HiOutlineBriefcase />} value={numBookings}/>
       <Stats title="Sales" color="green" icon={<HiOutlineBanknotes />} value={formatCurrency(sales)}/>
       <Stats title="Check ins" color="indigo" icon={<HiOutlineCalendarDays />} value={checkins}/>
-      <Stats title="Occupancy rate" color="yellow" icon={<HiOutlineChartBar />} value={ Math.round(occupation * 100)}/>
+      <Stats title="Occupancy rate" color="yellow" icon={<HiOutlineChartBar />} value={ Math.round(occupation * 100) + "%"}/>
     </>
   );
 }
