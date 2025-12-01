@@ -1,7 +1,7 @@
 import react from "react";
 import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
-import { Area, AreaChart, CartesianGrid, Tooltip, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -45,6 +45,10 @@ const fakeData = [
   { label: "Feb 06", totalSales: 1450, extrasSales: 400 },
 ];
 
+
+
+function SalesChart() {
+
 const isDarkMode = true;
 const colors = isDarkMode
   ? {
@@ -60,17 +64,19 @@ const colors = isDarkMode
       background: "#fff",
     };
 
-function SalesChart() {
   return (
     <StyledSalesChart>
       <Heading as="h2">Sales</Heading>
-
-      <AreaChart data={fakeData} height={300} width={700}>
-        <XAxis dataKey="label"/>
-        <CartesianGrid />
-        <Tooltip />
-        <Area dataKey="totalSales" type="monotone" stroke="red" fill="orange"/>
-      </AreaChart>
+      <ResponsiveContainer>
+         <AreaChart data={fakeData} height={300} width={700}>
+          <XAxis dataKey="label"/>
+          <YAxis unit="$"/>
+          <CartesianGrid strokeDasharray="4"/>
+          <Tooltip />
+          <Area dataKey="totalSales" type="monotone" stroke="red" fill="orange"/>
+        </AreaChart>
+      </ResponsiveContainer>
+     
     </StyledSalesChart>
   );
 };
