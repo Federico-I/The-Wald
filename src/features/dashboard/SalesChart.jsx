@@ -1,6 +1,7 @@
 import react from "react";
 import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
+import { Area, AreaChart, CartesianGrid, Tooltip, XAxis } from "recharts";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -60,9 +61,18 @@ const colors = isDarkMode
     };
 
 function SalesChart() {
-  return <StyledSalesChart>
-    
-  </StyledSalesChart>;
+  return (
+    <StyledSalesChart>
+      <Heading as="h2">Sales</Heading>
+
+      <AreaChart data={fakeData} height={300} width={700}>
+        <XAxis dataKey="label"/>
+        <CartesianGrid />
+        <Tooltip />
+        <Area dataKey="totalSales" type="monotone" stroke="red" fill="orange"/>
+      </AreaChart>
+    </StyledSalesChart>
+  );
 };
 
 export default SalesChart;

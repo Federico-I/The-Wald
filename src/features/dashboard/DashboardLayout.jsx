@@ -2,6 +2,7 @@ import react from "react";
 import styled from "styled-components";
 import { useRecentStays } from "./useRecentStays";
 import Stats from "./Stats";
+import SalesChart from "./SalesChart";
 
 const StyledDashboardLayout = styled.div`
   display: grid;
@@ -23,7 +24,7 @@ function DashboardLayout() {
       <Stats bookings={bookings} confirmedStays={confirmedStays} numDays={numDays} cabinCount={cabins.lenght}/>
       <div>Today's activity</div>
       <div>Chart stay durations</div>
-      <div>Chart sales</div>
+      <SalesChart />
     </StyledDashboardLayout>
   );
 }
