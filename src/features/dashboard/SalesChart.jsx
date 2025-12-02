@@ -72,7 +72,7 @@ const colors = isDarkMode
           <YAxis unit="$"/>
           <CartesianGrid strokeDasharray="4"/>
           <Tooltip />
-          <Area dataKey="totalSales" type="monotone" stroke={colors.totalSales.stroke} fill={} />
+          <Area dataKey="totalSales" type="monotone" stroke={colors.totalSales.stroke} fill={colors.totalSales.fill} />
         </AreaChart>
       </ResponsiveContainer>
      
