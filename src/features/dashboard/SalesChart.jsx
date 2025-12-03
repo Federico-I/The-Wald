@@ -46,7 +46,7 @@ const fakeData = [
   { label: "Feb 06", totalSales: 1450, extrasSales: 400 },
 ];
 
-function SalesChart() {
+function SalesChart({ booking, numDays }) {
 
 const { isDarkMode } = useDarkMode();
 const colors = isDarkMode

@@ -24,7 +24,7 @@ function DashboardLayout() {
       <Stats bookings={bookings} confirmedStays={confirmedStays} numDays={numDays} cabinCount={cabins.lenght}/>
       <div>Today's activity</div>
       <div>Chart stay durations</div>
-      <SalesChart />
+      <SalesChart booking={bookings} numDays={numDays} />
     </StyledDashboardLayout>
   );
 }
