@@ -3,6 +3,7 @@ import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
+import { eachDayOfInterval, subDays } from "date-fns";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -48,8 +49,13 @@ const fakeData = [
 
 function SalesChart({ booking, numDays }) {
 
-const { isDarkMode } = useDarkMode();
-const colors = isDarkMode
+  const { isDarkMode } = useDarkMode();
+
+  eachDayOfInterval({
+    start: subDays(),
+  })
+
+  const colors = isDarkMode
   ? {
       totalSales: { stroke: "#4f46e5", fill: "#4f46e5" },
       extrasSales: { stroke: "#22c55e", fill: "#22c55e" },
