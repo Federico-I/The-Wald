@@ -69,8 +69,8 @@ const colors = isDarkMode
       <ResponsiveContainer>
          <AreaChart data={fakeData} height={300} width={700}>
           <XAxis dataKey="label" tick={{ fill: colors.text }} tickLine={{ stroke: colors.text }} />
-          <YAxis unit="$"/>
-          <CartesianGrid strokeDasharray="4"/>
+          <YAxis unit="$" tick={{ fill: colors.text }} tickLine={{ stroke: colors.text }}/>
+          <CartesianGrid strokeDasharray="4" contentStyle={{ backgroundColor: colors.background }}/>
           <Tooltip />
           <Area dataKey="totalSales" type="monotone" stroke={colors.totalSales.stroke} fill={colors.totalSales.fill} />
         </AreaChart>
