@@ -59,6 +59,7 @@ function SalesChart({ bookings, numDays }) {
     return {
       label: format(date, "MM dd"),
       totalSales: bookings.filter((booking) => isSameDay(date, new Date(booking.credit_at))).reduce((acc, cur) => acc + cur.totalPrice, 0),
+      extrasSales: bookings.filter((booking) => isSameDay(date, new Date(booking.credit_at))).reduce((acc, cur) => acc + cur.extrasPrice, 0),
     };
   });
 
