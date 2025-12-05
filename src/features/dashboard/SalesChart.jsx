@@ -51,7 +51,7 @@ function SalesChart({ booking, numDays }) {
   const { isDarkMode } = useDarkMode();
 
   const allDates = eachDayOfInterval({
-    start: ,
+    start: subDays(new Date(), numDays - 1),
   });
 
   const colors = isDarkMode
