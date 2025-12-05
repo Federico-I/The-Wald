@@ -47,11 +47,12 @@ const fakeData = [
   { label: "Feb 06", totalSales: 1450, extrasSales: 400 },
 ];
 
-function SalesChart({ booking, numDays }) {
+function SalesChart({ bookings, numDays }) {
   const { isDarkMode } = useDarkMode();
 
   const allDates = eachDayOfInterval({
     start: subDays(new Date(), numDays - 1),
+    end: new Date(),
   });
 
   const colors = isDarkMode
