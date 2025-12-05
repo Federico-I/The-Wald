@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { eachDayOfInterval, format, subDays } from "date-fns";
+import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -58,6 +58,7 @@ function SalesChart({ bookings, numDays }) {
   const data = allDates.map((date) => {
     return {
       label: format(date, "MM dd"),
+      totalSales: bookings.filter((booking) => isSameDay(date, new Date(booking.credit_at))).reduce((acc, cur) => acc + cur.totalPrice, 0),
     };
   });
 
