@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { eachDayOfInterval, subDays } from "date-fns";
+import { eachDayOfInterval, format, subDays } from "date-fns";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -53,6 +53,12 @@ function SalesChart({ bookings, numDays }) {
   const allDates = eachDayOfInterval({
     start: subDays(new Date(), numDays - 1),
     end: new Date(),
+  });
+
+  const data = allDates.map((date) => {
+    return {
+      label: format(date, "MM dd"),
+    };
   });
 
   const colors = isDarkMode
