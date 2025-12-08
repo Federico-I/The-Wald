@@ -57,7 +57,7 @@ function SalesChart({ bookings, numDays }) {
 
   const data = allDates.map((date) => {
     return {
-      label: format(date, "MM dd"),
+      label: format(date, "MMM dd"),
       totalSales: bookings.filter((booking) => isSameDay(date, new Date(booking.credit_at))).reduce((acc, cur) => acc + cur.totalPrice, 0),
       extrasSales: bookings.filter((booking) => isSameDay(date, new Date(booking.credit_at))).reduce((acc, cur) => acc + cur.extrasPrice, 0),
     };
@@ -80,8 +80,9 @@ function SalesChart({ bookings, numDays }) {
   return (
     <StyledSalesChart>
       <Heading as="h2">Sales</Heading>
-      <ResponsiveContainer>
-         <AreaChart data={fakeData} height={300} width={700}>
+
+      <ResponsiveContainer height={300} width="100%">
+         <AreaChart data={data} height={300} width={700}>
           <XAxis dataKey="label" tick={{ fill: colors.text }} tickLine={{ stroke: colors.text }} />
           <YAxis unit="$" tick={{ fill: colors.text }} tickLine={{ stroke: colors.text }}/>
           <CartesianGrid strokeDasharray="4"/>
