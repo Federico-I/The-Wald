@@ -1,3 +1,4 @@
+import react from "react";
 import styled from "styled-components";
 
 const ChartBox = styled.div`
@@ -129,4 +130,10 @@ function prepareData(startData, stays) {
     .filter((obj) => obj.value > 0);
 
   return data;
-}
+};
+
+function durationChart({ confirmedStays }) {
+  return <ChartBox>Chart</ChartBox>;
+};
+
+export default {prepareData, DurationChart};
