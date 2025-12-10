@@ -1,7 +1,7 @@
 import react from "react";
 import styled from "styled-components";
 import Heading from "../../ui/Heading";
-import { Pie, PieChart, ResponsiveContainer } from "recharts";
+import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 const ChartBox = styled.div`
   /* Box */
@@ -139,7 +139,9 @@ function DurationChart({ confirmedStays }) {
     <Heading as="h2">Stay duration Summary</Heading>
     <ResponsiveContainer>
       <PieChart>
-        <Pie data={startDataLight} nameKey="duration" dataKey="value" innerRadius={85} outerRadius={110} cx="40%" cy="50%" paddingAngle={2}/>
+        <Pie data={startDataLight} nameKey="duration" dataKey="value" innerRadius={85} outerRadius={110} cx="40%" cy="50%" paddingAngle={2}>
+          {startDataDark.map((entry) => (<Cell fill={entry.color} stroke={entry.color} key={entry.duration}/>))}
+        </Pie>
       </PieChart>
     </ResponsiveContainer>
   </ChartBox>;
