@@ -137,7 +137,7 @@ function prepareData(startData, stays) {
 function DurationChart({ confirmedStays }) {
   return <ChartBox>
     <Heading as="h2">Stay duration Summary</Heading>
-    <ResponsiveContainer>
+    <ResponsiveContainer width="100%" height={240}>
       <PieChart>
         <Pie data={startDataLight} nameKey="duration" dataKey="value" innerRadius={85} outerRadius={110} cx="40%" cy="50%" paddingAngle={2}>
           {startDataDark.map((entry) => (<Cell fill={entry.color} stroke={entry.color} key={entry.duration}/>))}
