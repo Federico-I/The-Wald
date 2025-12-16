@@ -135,6 +135,9 @@ function prepareData(startData, stays) {
 };
 
 function DurationChart({ confirmedStays }) {
+  const {isDarkMode} = useDarkMode();
+  const startData = isDarkMode ? startDataDark : startDataLight;
+
   return <ChartBox>
     <Heading as="h2">Stay duration Summary</Heading>
     <ResponsiveContainer width="100%" height={240}>
