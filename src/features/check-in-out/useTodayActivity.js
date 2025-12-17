@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
 import react from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { getStaysTodayActivity } from '../../services/apiBookings';
 
 export function useTodayActivity() {
@@ -8,8 +8,6 @@ export function useTodayActivity() {
     queryKey: ["today-activity"],
   });
 
-  return (
-    <div>useTodayActivity</div>
-  );
-}
+  return {stays, isLoading};
+};
 
