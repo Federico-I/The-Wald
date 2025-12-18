@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
+import Spinner from "../../ui/Spinner";
 
 const StyledToday = styled.div`
   /* Box */
@@ -45,6 +46,8 @@ function TodayActivity() {
       <Row type="horizontal">
         <Heading as="h2">Today</Heading>
       </Row>
+
+      {!isLoading ? stays?.lenght > 0 ? <TodayActivity></TodayActivity> : <NoActivity>No Activity today</NoActivity> : <Spinner/>}
     </StyledToday>
   );
 }
