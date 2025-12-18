@@ -1,7 +1,8 @@
+import react from "react";
 import styled from "styled-components";
-
 import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
+import { useTodayActivity } from "./useTodayActivity";
 
 const StyledToday = styled.div`
   /* Box */
@@ -36,7 +37,9 @@ const NoActivity = styled.p`
   margin-top: 0.8rem;
 `;
 
-function Today() {
+function TodayActivity() {
+  const {stays, isLoading} = useTodayActivity();
+
   return (
     <StyledToday>
       <Row type="horizontal">
