@@ -1,3 +1,4 @@
+import react from 'react';
 import styled from "styled-components";
 
 const StyledTodayItem = styled.li`
@@ -18,3 +19,9 @@ const StyledTodayItem = styled.li`
 const Guest = styled.div`
   font-weight: 500;
 `;
+
+function TodayItem() {
+  return <StyledTodayItem>Items</StyledTodayItem>;
+}
+
+export default TodayItem;
