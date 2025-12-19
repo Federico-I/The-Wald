@@ -20,8 +20,12 @@ const Guest = styled.div`
   font-weight: 500;
 `;
 
-function TodayItem() {
-  return <StyledTodayItem>Items</StyledTodayItem>;
+function TodayItem({ activity }) {
+  const { id, status, guests, numNights } = activity;
+
+  return ( 
+    <StyledTodayItem>{status === "uncofirmed" && <Tag type="green">Arriving</Tag>}</StyledTodayItem>
+  );
 }
 
 export default TodayItem;
