@@ -1,6 +1,8 @@
 import react from 'react';
 import styled from "styled-components";
 import { Flag } from '../../ui/Flag';
+import Button from '../../ui/Button';
+import { Link } from 'react-router-dom';
 
 const StyledTodayItem = styled.li`
   display: grid;
@@ -32,6 +34,10 @@ function TodayItem({ activity }) {
       <Flag src={guests.countryFlag} alt={`Flag of ${guests.country}`}/>
       <Guest>{guests.fullName}</Guest>
       <div>{numNights} nights</div>
+
+      {status === "unconfirmed" && (
+        <Button type="small" variation="primary" as={Link} to={`/checkin${id}`}>Check in</Button>
+      )}
     </StyledTodayItem>
   );
 }
