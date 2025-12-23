@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Flag } from '../../ui/Flag';
 import Button from '../../ui/Button';
 import { Link } from 'react-router-dom';
+import CheckoutButton from './CheckoutButton';
 
 const StyledTodayItem = styled.li`
   display: grid;
@@ -28,7 +29,7 @@ function TodayItem({ activity }) {
 
   return ( 
     <StyledTodayItem>
-      {status === "uncofirmed" && <Tag type="green">Arriving</Tag>}
+      {status === "unconfirmed" && <Tag type="green">Arriving</Tag>}
       {status === "checked-in" && <Tag type="blue">Departing</Tag>}
 
       <Flag src={guests.countryFlag} alt={`Flag of ${guests.country}`}/>
@@ -38,6 +39,7 @@ function TodayItem({ activity }) {
       {status === "unconfirmed" && (
         <Button type="small" variation="primary" as={Link} to={`/checkin${id}`}>Check in</Button>
       )}
+      {status === "checked-in" && <CheckoutButton bookingId={id}/>}
     </StyledTodayItem>
   );
 }

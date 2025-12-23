@@ -1,4 +1,4 @@
-import React from 'react';
+import react from 'react';
 import CheckinBooking from './CheckinBooking';
 
 function Checkin() {
