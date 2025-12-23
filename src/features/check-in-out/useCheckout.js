@@ -1,4 +1,4 @@
-import React from 'react';
+import react from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { updateBooking } from '../../services/apiBookings';
 import toast from 'react-hot-toast';
