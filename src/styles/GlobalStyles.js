@@ -1,5 +1,6 @@
 import react from "react";
 import { createGlobalStyle } from "styled-components";
+import GlobalStyles from "../../../../0-ultimate-react-course-main/17-the-wild-oasis/final-6-final/src/styles/GlobalStyles";
 
 const createGlobalStyle = createGlobalStyle`
   
@@ -183,4 +184,6 @@ img {
 
   /* For dark mode */
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
-};
+}`;
+
+export default GlobalStyles;
