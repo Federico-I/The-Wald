@@ -2,6 +2,7 @@ import react from "react";
 import styled from "styled-components";
 import Heading from "./Heading";
 import GlobalStyles from "../styles/GlobalStyles";
+import Button from "./Button";
 
 const StyledErrorFallback = styled.main`
   height: 100vh;
@@ -40,6 +41,8 @@ function ErrorFalback({ error }) {
       <StyledErrorFallback>
         <Box>
           <Heading as="h1">Error! Something went wrong :/</Heading>
+          <p>{error.message}</p>
+          <Button size="large">Try again</Button>
         </Box>
       </StyledErrorFallback>
     </>
