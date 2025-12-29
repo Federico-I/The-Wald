@@ -19,10 +19,11 @@ function Sidebar() {
   return (
     <StyledSidebar>
       <Logo/>
-      <MainNav />
-      <Uploader />
+      <MainNav />    
     </StyledSidebar>
   )
 };
 
 export default Sidebar;
+
+// <Uploader />
