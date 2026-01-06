@@ -1,4 +1,4 @@
-import React from 'react';
+import react from 'react';
 import { BrowserRouter, Navigate, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Bookings from './pages/Bookings';
