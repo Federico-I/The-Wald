@@ -25,5 +25,3 @@ function Sidebar() {
 };
 
 export default Sidebar;
-
-// <Uploader />
